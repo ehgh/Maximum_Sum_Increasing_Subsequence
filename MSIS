@@ -1,0 +1,39 @@
+import util.java.scanner;
+
+class MSIS {
+	public static void main(String args[]){
+		Scanner scanner = new scanner(System.in);
+		int Len = scanner.nextInt();
+		int[] num = new int[Len];
+		for(int i = 0; i<Len; i++){
+			num[i] = scanner.nextInt();
+		}
+		scanner.close();
+		System.out.println(score(num, num.length));
+	}
+
+	private static int score(int[] num, int len){
+		
+		if (len == 1)
+			return num;
+		else
+			int[] subNum = subNum(num, len);
+			return max(num[len-1]+score(subNum, subNum.length), score(num, len-1));
+	}
+
+	private static int[] subNum(int[] num, int len){
+	 int[] Temp = ;
+	 for (int i = 0; i<len-1; i++){
+	 	if (num[i] < num[len])
+	 		Temp
+	 }
+	 return Temp;
+	}
+
+	private static int max(int a, int b){
+		if (a>=b)
+			return a;
+		else
+			return b;
+	}
+}
